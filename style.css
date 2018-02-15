@@ -16,15 +16,7 @@
   color: white;
 }
 
-.bar-graph-svg rect {
-  fill: orange;
-}
 
-.bar-graph-svg text {
-  fill: blue;
-  font: 10px sans-serif;
-  text-anchor: end;
-}
 /* .bar-graph-svg div {
   font: 10px sans-serif;
   background-color: orange;
@@ -41,4 +33,24 @@
 
 p {
   text-align: center;
+}
+
+/* special SVG css */
+.bar-graph-svg rect {
+  fill: orange;
+}
+
+.bar-graph-svg text {
+  fill: blue;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+.bar-graph-vertical rect {
+  fill: lightblue;
+}
+
+.bar-graph-vertical text {
+  fill: black;
+  font: 10px sans-serif;
+  text-anchor: end;
 }
