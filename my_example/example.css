@@ -1,0 +1,15 @@
+.chart rect {
+  fill: lightblue;
+}
+
+.chart text {
+  fill: black;
+  font: 2em sans-serif;
+  text-anchor: end;
+}
+
+.chart-container {
+  /* margin: 0 auto; */
+  text-align: center;
+  padding: 0;
+}
