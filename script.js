@@ -25,6 +25,7 @@ How to include scaling for dynamically sizing nodes based on data
 
 let scale = d3.scaleLinear()
 // domain says the range of our data values
+ // .domain([0, d3.max(data1)])
   .domain([0, 350])
   // range is what those data values should squeeze into
   .range([0, 300])
@@ -37,3 +38,44 @@ let scale = d3.scaleLinear()
       .append("div")
       .style("width", function(d) { return scale(d) + "px"; })
       .text(function(d) { return d; });
+
+
+// Scalable Vector Graphics
+//https://bost.ocks.org/mike/bar/2/
+// to run this on chrome in cli start a server  python -m SimpleHTTPServer
+//localhost:8000
+var width = 420,
+    barHeight = 20;
+
+let scaleSvg = d3.scaleLinear()
+    .range([0, width]);
+
+var chart = d3.select(".bar-graph-svg")
+    .attr("width", width);
+
+d3.tsv("data.tsv", type, function(error, data) {
+  scaleSvg.domain([0, d3.max(data, function(d) {
+    return d.value; })]);
+
+  chart.attr("height", barHeight * data.length);
+
+  var bar = chart.selectAll("g")
+      .data(data)
+    .enter().append("g")
+      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
+
+  bar.append("rect")
+      .attr("width", function(d) { return scaleSvg(d.value); })
+      .attr("height", barHeight - 1);
+
+  bar.append("text")
+      .attr("x", function(d) { return scaleSvg(d.value) - 3; })
+      .attr("y", barHeight / 2)
+      .attr("dy", ".35em")
+      .text(function(d) { return `${d.value} ${d.name}`; });
+});
+
+function type(d) {
+  d.value = +d.value; // coerce to number
+  return d;
+}

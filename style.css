@@ -16,6 +16,24 @@
   color: white;
 }
 
+.bar-graph-svg rect {
+  fill: orange;
+}
+
+.bar-graph-svg text {
+  fill: blue;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+/* .bar-graph-svg div {
+  font: 10px sans-serif;
+  background-color: orange;
+  text-align: right;
+  padding: 3px;
+  margin: 1px;
+  color: white;
+} */
+
 #dashboard {
   width: 320px;
   border: 1px solid black;
