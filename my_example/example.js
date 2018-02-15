@@ -34,7 +34,7 @@ chartVert.append("text")
     .attr("x",(height / 2)+margin.left)
     .attr("dy", "2em")
     .style("text-anchor", "middle")
-    .text("People in MyTown, USA");
+    .text("People in My Pen Pal Club");
 
 d3.csv("dummy_data.csv", type, function(error, data) {
   scaleVert.domain([0, d3.max(data, function(d) { return d.age; })]);
@@ -54,9 +54,6 @@ d3.csv("dummy_data.csv", type, function(error, data) {
       .attr("height", function(d) { return height - scaleVert(d.age); })
       .attr("width", barWidth - 1);
 
-  // bar.append("text")
-  //     .attr("x", barWidth / 2)
-  //     .attr("y", function(d) { return scaleVert(d.age) + 3; })
-  //     .attr("dy", ".75em")
-  //     .text(function(d) { return `${d.age} ${d.name}`; });
 });
+
+//SAME DATA DIFFERENT REPRESENTATION
