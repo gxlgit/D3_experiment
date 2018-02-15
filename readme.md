@@ -25,6 +25,7 @@ very easy to dynamically manipulate the DOM based on the data set.  There are ot
 ## How To Use D3
 * To use D3 you can either include this script tag <script src="https://d3js.org/d3.v4.min.js"></script>
   or you can locally install it on your computer and import it into you .js 
+* For some examples that import data from a local .csv file you will either need to use Mozilla or run a python server locally $ python -m SimpleHTTPServer
 
 ## Terms to Know
 * [Scalable Vector Graphics](https://www.w3.org/Graphics/SVG/)
