@@ -9,7 +9,6 @@ var margin = {top: 20, right: 20, bottom: 50, left: 100},
     }
 
 let scaleVert = d3.scaleLinear()
-// for vertical bars the range has to be reversed
     .range([height, 0]);
 
 
@@ -29,6 +28,13 @@ chartVert.append("text")
       .style("text-anchor", "middle")
       // .style("color", "blue")
       .text("Age");
+
+  chartVert.append("text")
+    .attr("y", height-margin.top)
+    .attr("x",(height / 2)+margin.left)
+    .attr("dy", "2em")
+    .style("text-anchor", "middle")
+    .text("People in MyTown, USA");
 
 d3.csv("dummy_data.csv", type, function(error, data) {
   scaleVert.domain([0, d3.max(data, function(d) { return d.age; })]);
